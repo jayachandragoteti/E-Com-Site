@@ -7,4 +7,4 @@ const userSchema = new Schema({
   phone: String,
 });
 
-const User = (module.exports = mongoose.model("user", userSchema));
+module.exports = mongoose.model("user", userSchema);
