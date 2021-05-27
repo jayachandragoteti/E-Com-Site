@@ -1,4 +1,5 @@
 const productModel = require("../models/product.schema");
+const categoryModel = require("../models/category.schema");
 
 module.exports.getProducts = async (req, res) => {
   let products = await productModel.find({}); // query DB wait for the response to come
@@ -44,6 +45,10 @@ module.exports.addProduct = async (req, res) => {
     res.status(400).json({ success: false, msg: error });
   }
 };
-
+//get categories
+module.exports.getCategories = async (req, res) => {
+  let categories = await categoryModel.find({}); 
+  return res.status(200).json({ success: true, data: categories });
+};
 
 //  get single product
