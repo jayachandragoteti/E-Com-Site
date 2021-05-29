@@ -46,9 +46,29 @@ module.exports.addProduct = async (req, res) => {
   }
 };
 //get categories
-module.exports.getCategories = async (req, res) => {
+module.exports.getCategories = async (req, res) => {  
   let categories = await categoryModel.find({}); 
-  return res.status(200).json({ success: true, data: categories });
+  return res.status(200).json({ success: true, data: 'These are the categories' });
+};
+//add categories
+module.exports.addCategories = async (req, res) => {
+  try {
+    const {
+      name
+    } = req.body;
+    if (!name)
+      return res.status(400).json({ success: false, msg: "Category Name is required" });
+
+
+    let categoryObj = new categoryModel({
+      name
+    });
+    await categoryObj.save();
+
+    return res.status(200).json({ success: true, msg: "Category Added" });
+  } catch (error) {
+    res.status(400).json({ success: false, msg: error });
+  }
 };
 
 //  get single product
