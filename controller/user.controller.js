@@ -36,7 +36,6 @@ module.exports.registerUser = async (req, res) => {
         .status(400)
         .json({ success: false, data: "email is required" });
     }
-
     // To do
     // 1. find user by email and throw 400 if user already exists
     const user = await findByEmail(email);
@@ -50,7 +49,6 @@ module.exports.registerUser = async (req, res) => {
     const hashPassword = bcrypt.hashSync(password, 8);
     let userObj = new userModel({ name, email, password: hashPassword });
     await userObj.save();
-
     res.status(200).json({ success: true, data: email });
   } catch (error) {
     console.log(error);
@@ -62,15 +60,12 @@ module.exports.registerUser = async (req, res) => {
 module.exports.loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-
     const data = await findByEmail(email);
-
     if (!data.length) {
       return res
         .status(400)
         .json({ success: false, msg: `User Not found with email id ${email}` });
     }
-
     bcrypt.compare(password, data[0].password, (err, response) => {
       if (err) {
         throw err;
@@ -81,7 +76,6 @@ module.exports.loginUser = async (req, res) => {
           .status(400)
           .json({ success: false, msg: "password is invalid!" });
       }
-
       let token = jwt.sign({ email }, secret, { expiresIn: 10000 });
       return res.status(200).json({ success: true, msg: token });
     });
