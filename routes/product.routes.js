@@ -9,6 +9,6 @@ router.post("/products", productController.addProduct);
 //category routes
 router.get("/products/categories", productController.getCategories);
 router.post("/products/categories", productController.addCategories);
-router.post("/products/category/:id", productController.getSingleCategory);
+router.get("/products/category/:id", productController.getSingleCategory);
 
 module.exports = router;
