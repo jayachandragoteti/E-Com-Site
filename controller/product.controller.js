@@ -79,4 +79,8 @@ module.exports.getSingleCategory = async(req,res) => {
   } catch (error){
     res.status(400).json({ success: false, msg: error });
   }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
