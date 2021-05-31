@@ -74,7 +74,7 @@ module.exports.addCategories = async (req, res) => {
 //  get single category
 module.exports.getSingleCategory = async(req,res) => {
   try{
-    let category =await categoryModel.findById(req.param.id);
+    let category =await categoryModel.findById(req.params.id);
     return res.status(200).json({ success: true, data: category });
   } catch (error){
     res.status(400).json({ success: false, msg: error });
