@@ -48,7 +48,7 @@ module.exports.addProduct = async (req, res) => {
 //get categories
 module.exports.getCategories = async (req, res) => {  
   let categories = await categoryModel.find({}); 
-  return res.status(200).json({ success: true, data: 'These are the categories' });
+  return res.status(200).json({ success: true, data: categories });
 };
 //add categories
 module.exports.addCategories = async (req, res) => {
@@ -71,4 +71,12 @@ module.exports.addCategories = async (req, res) => {
   }
 };
 
-//  get single product
+//  get single category
+module.exports.getSingleCategory = async(req,res) => {
+  try{
+    let category =await categoryModel.findById(req.param.id);
+    return res.status(200).json({ success: true, data: category });
+  } catch (error){
+    res.status(400).json({ success: false, msg: error });
+  }
+}
