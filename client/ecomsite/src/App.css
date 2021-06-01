@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+.input-field {
+  padding: 1em;
+  margin: 3%;
+}
+.card {
+  border: 2px solid white;
+  border-radius: 5%;
+  max-width: 100%;
+  width: 30%;
+  align-items: center;
+  margin-left: 35%;
+  margin-top: 10%;
+}
