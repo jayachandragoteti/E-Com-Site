@@ -51,6 +51,16 @@ module.exports.addProduct = async(req, res) => {
 		});
 	}
 };
+//  get single product
+module.exports.getSingleProduct = async (req,res) => {
+  try {
+    let product = await productModel.findById(req.params.id);
+    return res.status(200).json({ success: true, data: product });
+  } catch (error) {
+    res.status(400).json({ success: false, msg: error });
+  }
+
+}
 //get categories
 module.exports.getCategories = async(req, res) => {
 	let categories = await categoryModel.find({});
@@ -97,6 +107,5 @@ module.exports.getSingleCategory = async(req, res) => {
 			success: false,
 			msg: error
 		});
-	} << << << < Updated upstream
-} === === =
-} >>> >>> > Stashed changes
+	} 
+} 
