@@ -21,6 +21,7 @@ import { mainListItems} from './listItems';
 
 import AddProduct from './AddProduct';
 import AddCategory from './AddCategory';
+
 import ProductsList from './ProductsList'
 
 function Copyright() {
@@ -183,7 +184,7 @@ export default function Dashboard() {
                 <AddProduct></AddProduct>
             </Grid>
             <Grid item xs={12} md={12} lg={12}>
-                <ProductsList></ProductsList>
+              <ProductsList />
             </Grid>
           </Grid>
           <Box pt={4}>
