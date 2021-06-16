@@ -1,24 +1,49 @@
 import React from 'react';
 
-import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-
 import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
 
-export default function AddProductCard () {
-    return(
-        <Container maxWidth="sm" fixed>
+const useStyles = makeStyles((theme) => ({
+    paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    avatar: {
+        margin: theme.spacing(1),
+        // backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(1),
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
+}));
+
+export default function AddProduct() {
+    const classes = useStyles();
+
+    return (
+        <Container component="main" maxWidth="xs">
             <Card>
                 <CardContent>
-                    <div>
+                    <CssBaseline />
+                    <div className={classes.paper}>
                         <Typography component="h1" variant="h5">
                             Add Product
                         </Typography>
-                        <form >
+                        <form className={classes.form} noValidate>
                             <TextField
                                 type="text"
                                 variant="outlined"
@@ -39,7 +64,7 @@ export default function AddProductCard () {
                                 id="description"
                                 label="Product Description"
                                 name="description"
-                                
+
                             />
                             <TextField
                                 type="number"
@@ -50,7 +75,7 @@ export default function AddProductCard () {
                                 id="mrp"
                                 label="MRP"
                                 name="mrp"
-                                
+
                             />
                             <TextField
                                 type="number"
@@ -61,7 +86,7 @@ export default function AddProductCard () {
                                 id="sp"
                                 label="Selling Price"
                                 name="sp"
-                                
+
                             />
                             <TextField
                                 type="select"
@@ -81,10 +106,10 @@ export default function AddProductCard () {
                                 fullWidth
                                 id="images"
                                 name="images"
-                                label="Product Image"
+                                placeholder="Product Image"
                                 autoFocus
                             />
-            
+
                             <Button
                                 type="submit"
                                 fullWidth
@@ -95,7 +120,11 @@ export default function AddProductCard () {
                             </Button>
                         </form>
                     </div>
+                    <Box mt={8}>
+
+                    </Box>
                 </CardContent>
             </Card>
-        </Container>);
-};
+        </Container>
+    );
+}
