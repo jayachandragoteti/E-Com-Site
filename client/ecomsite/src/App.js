@@ -7,12 +7,13 @@ import Header from './components/Header';
 import AddProduct from './components/Dashboard/AddProduct'
 import AddCategory from './components/Dashboard/AddCategory'
 import ProductsList from './components/Dashboard/ProductsList'
+import ProductView from './components/Dashboard/ProductView'
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Router>
+      <Header />
         <Switch>
           <Route path="/login">
             <Login />
@@ -29,6 +30,10 @@ function App() {
           <Route path="/productslist">
             <ProductsList />
           </Route>
+          <Route path="/productview">
+            <ProductView />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>

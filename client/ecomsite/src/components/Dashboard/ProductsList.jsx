@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-import CoffeCard from './CoffeCard'
+import ProductCard from './ProductCard'
 
 export default function AddProductCard() {
     const products = [
@@ -74,7 +74,7 @@ export default function AddProductCard() {
                         <Grid container spacing={1}>
                             {products.map((product) => (
                                 <Grid item xs key={products.id}>
-                                    <CoffeCard productData={product} />
+                                    <ProductCard productData={product} />
                                 </Grid>
                             ))}
                         </Grid>
