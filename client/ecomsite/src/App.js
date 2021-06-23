@@ -6,8 +6,8 @@ import Header from './components/Header';
 
 import AddProduct from './components/Dashboard/AddProduct'
 import AddCategory from './components/Dashboard/AddCategory'
-import ProductsList from './components/Dashboard/ProductsList'
-import ProductView from './components/Dashboard/ProductView'
+import ProductsList from './components/products/ProductsList'
+import ProductView from './components/products/ProductView'
 
 function App() {
   return (
@@ -33,7 +33,6 @@ function App() {
           <Route path="/productview">
             <ProductView />
           </Route>
-
           <Route path="/">
             <Home />
           </Route>

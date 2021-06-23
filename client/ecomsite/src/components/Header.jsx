@@ -8,13 +8,15 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import SideNavBar from './SideNavBar';
+import SideNavbar from './SideNavBar';
+import { Link } from 'react-router-dom';
+
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -123,7 +125,9 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem>Profile</MenuItem>
+      <Link to="/accountprofile">
+        <MenuItem>Profile</MenuItem>
+      </Link>
       <MenuItem >My Orders</MenuItem>
       <MenuItem >Logout</MenuItem>
     </Menu>
@@ -180,7 +184,7 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-            <SideNavBar />
+            <SideNavbar />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             E-com

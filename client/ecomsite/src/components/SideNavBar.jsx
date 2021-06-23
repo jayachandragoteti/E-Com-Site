@@ -4,6 +4,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import MenuIcon from '@material-ui/icons/Menu';
 import { List } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 import ListItem from '@material-ui/core/ListItem';
 
@@ -20,7 +21,6 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-import { Link } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -86,43 +86,59 @@ export default function SideBar() {
         aria-labelledby="nested-list-subheader"
         className={classes.root}
       >
-        <ListItem button>
-          <Link to="/login" variant="body2">
-            <ListItemText primary="Login" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link to="/register">
-            <ListItemText primary="register" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link to="/addproduct">
-            <ListItemText primary="addproduct" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link to="/addcategory">
-            <ListItemText primary="addcategory" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link to="/productview">
-            <ListItemText primary="productview" />
-          </Link>
-        </ListItem>
-
-        {/* <ListItem button onClick={handleClickOpen}>
+        <ListItem button onClick={handleClickOpen}>
           <ListItemText primary="Catefory-1" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItem button className={classes.nested}>
+
               <ListItemText primary="Sub-Catefory-1" />
             </ListItem>
           </List>
-        </Collapse> */}
+        </Collapse>
+        <ListItem button>
+          <ListItemText primary="Catefory-2" />
+        </ListItem>
+        <ListItem button>
+
+          <ListItemText primary="Catefory-3" />
+        </ListItem>
+        <ListItem button onClick={handleClickOpen}>
+
+          <ListItemText primary="Catefory-4" />
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button className={classes.nested}>
+
+              <ListItemText primary="Sub-Catefory-1" />
+            </ListItem>
+          </List>
+        </Collapse>
+        <Link to="/addproduct">
+          <ListItem button>
+            <ListItemText primary="Addproduct" />
+          </ListItem>
+        </Link>
+        <Link to="/addcategory">
+          <ListItem button>
+            <ListItemText primary="Add Category" />
+          </ListItem>
+        </Link>
+        <Link to="/productslist">
+          <ListItem button>
+            <ListItemText primary="Products List" />
+          </ListItem>
+        </Link>
+        <Link to="/productview">
+          <ListItem button>
+            <ListItemText primary="Products View" />
+          </ListItem>
+        </Link>
+
       </List>
     </div>
   );
