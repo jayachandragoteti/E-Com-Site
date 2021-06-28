@@ -107,7 +107,7 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="http://localhost:3000/Login.jsx" variant="body2">
+              <Link href="#" to="/login" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
@@ -115,7 +115,7 @@ export default function SignUp() {
         </form>
       </div>
       <Box mt={5}>
-        
+
       </Box>
     </Container>
   );
