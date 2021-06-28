@@ -16,7 +16,6 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import SideNavbar from './SideNavBar';
 import { Link } from 'react-router-dom';
 
-
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -185,6 +184,7 @@ export default function PrimarySearchAppBar() {
             aria-label="open drawer"
           >
             <SideNavbar />
+            <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             E-com
