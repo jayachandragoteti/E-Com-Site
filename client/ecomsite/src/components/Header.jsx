@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import SideBar from './SideNavbar';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -180,6 +181,7 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
+            <SideBar/>
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
