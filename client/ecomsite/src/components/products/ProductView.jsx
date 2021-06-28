@@ -22,12 +22,17 @@ export default function MainFeaturedPost() {
         ]
     }
     const [selectedImage, setSelectedImage] = useState(0)
+
     return (
         <Grid container sm={12} mt={100} justify="center">
             <Card>
                 <Grid container spacing={1} style={{ maxWidth: 1100, margin: '0 auto' }}>
                     <Grid item sm={2}>
-                        <ImageGrid images={product.images} onSelect={setSelectedImage} selectedImage={selectedImage} />
+                        <ImageGrid
+                            images={product.images}
+                            onSelect={setSelectedImage}
+                            selectedImage={selectedImage}
+                        />
                     </Grid>
                     <Grid item sm={6}>
                         <MainImage src={product.images[selectedImage]} />
