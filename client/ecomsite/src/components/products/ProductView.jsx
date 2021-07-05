@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardActionArea, Grid } from '@material-ui/core';
+import { Card,  Grid } from '@material-ui/core';
 
 import ImageGrid from './ImageGrid';
 import MainImage from './MainImage';
