@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,7 +8,6 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
@@ -61,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    paddingLeft: `calc(1em + ${ theme.spacing(4) }px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
@@ -108,11 +107,11 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const incementCount = (event)=> {
-      event.preventDefault();
-      let newCount = count;
-      newCount++
-      setCount(newCount);
+  const incementCount = (event) => {
+    event.preventDefault();
+    let newCount = count;
+    newCount++
+    setCount(newCount);
   }
 
   const menuId = 'primary-search-account-menu';
@@ -150,7 +149,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={count} color="secondary">
-          <ShoppingCart/>
+            <ShoppingCart />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -190,7 +189,7 @@ export default function PrimarySearchAppBar() {
           <Sidebar/>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-           E-com
+            E-com
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
