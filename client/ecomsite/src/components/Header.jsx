@@ -13,8 +13,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import SideNavbar from './SideNavBar';
 import { Link } from 'react-router-dom';
+import Sidebar from './Sidebar';
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -125,9 +126,11 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <Link to="/accountprofile">
-        <MenuItem>Profile</MenuItem>
+      <MenuItem>Profile</MenuItem>
       </Link>
-      <MenuItem >My Orders</MenuItem>
+      <Link to="/myorder">
+      <MenuItem>My Orders</MenuItem>
+      </Link>
       <MenuItem >Logout</MenuItem>
     </Menu>
   );
@@ -183,8 +186,7 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-            <SideNavbar />
-            <MenuIcon />
+          <Sidebar/>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             E-com
