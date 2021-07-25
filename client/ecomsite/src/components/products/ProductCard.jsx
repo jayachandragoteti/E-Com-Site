@@ -29,6 +29,7 @@ const ProductCard = props => {
           className={classes.media}
           image={product.images[0]}
           title="Contemplative Reptile"
+          onclick
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

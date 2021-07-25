@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React,{useState,useEffect} from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
@@ -9,7 +8,10 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import axios from 'axios';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -31,9 +33,18 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function AddProduct() {
+const AddProduct = () => {
+    
     const classes = useStyles();
-
+    const [categories,setCategories] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/products/categories')
+            .then(function (response) {
+                setCategories(response.data);
+                console.log("hello"+response);
+            }
+            );
+    });
     return (
         <Container component="main" maxWidth="xs">
             <Card>
@@ -88,16 +99,21 @@ export default function AddProduct() {
                                 name="sp"
 
                             />
-                            <TextField
-                                type="select"
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="Category"
-                                label="Select Category"
-                                name="Category"
-                            />
+                            <InputLabel id="demo-simple-select-outlined-label">Add Category</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-outlined-label"
+                                    id="Category"
+                                    value=""
+                                    onChange="{handleChange}"
+                                    label="Add Category"
+                                >
+                                    <MenuItem value="">
+                                        <em>------ Select Category ------</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
                             <TextField
                                 type="file"
                                 variant="outlined"
@@ -109,7 +125,7 @@ export default function AddProduct() {
                                 placeholder="Product Image"
                                 autoFocus
                             />
-
+                            
                             <Button
                                 type="submit"
                                 fullWidth
@@ -128,3 +144,4 @@ export default function AddProduct() {
         </Container>
     );
 }
+export default AddProduct;

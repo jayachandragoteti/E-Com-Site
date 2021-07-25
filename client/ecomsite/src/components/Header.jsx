@@ -15,7 +15,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import SideNavbar from './SideNavBar';
 import { Link } from 'react-router-dom';
-
+import MenuIcon from '@material-ui/icons/Menu';
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
